@@ -1,9 +1,23 @@
 package com.example.springBoot2.models;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Movie  {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "year")
     private int year;
+
+    @Column(name = "director")
     private String director;
+
+    @Column(name = "runtime_in_min")
     private int runtime;
 
     public Movie() {

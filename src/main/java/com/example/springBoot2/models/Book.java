@@ -1,9 +1,23 @@
 package com.example.springBoot2.models;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "year")
     private int year;
+
+    @Column(name = "author")
     private String author;
+
+    @Column(name = "page_count")
     private int pages;
 
     public Book() {

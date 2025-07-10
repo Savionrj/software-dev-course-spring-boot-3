@@ -1,10 +1,19 @@
 package com.example.springBoot2.models;
 
+import jakarta.persistence.*;
 
+@Entity
 public class Album {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     private String name;
+
     private int year;
+
     private String artist;
+
     private int tracks;
 
     public Album() {
